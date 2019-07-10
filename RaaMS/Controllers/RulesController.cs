@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RaaMS.Models;
 
 namespace RaaMS.Controllers
 {
@@ -13,9 +14,9 @@ namespace RaaMS.Controllers
     {
         // GET: api/Rules
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Rule> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Rule[] { new Rule(), new Rule() };
         }
 
         // GET: api/Rules/5
