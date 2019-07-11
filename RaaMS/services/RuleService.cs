@@ -18,6 +18,7 @@ namespace RaaMS.Services
         }
         public IEnumerable<Rule> GetRules()
         {
+            
             return null;
         }
 
