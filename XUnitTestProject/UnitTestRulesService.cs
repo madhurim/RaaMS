@@ -17,11 +17,11 @@ namespace XUnitTestProject
             databaseService
             .GetConnection();
            
-
         }
         [Fact]
         public void TestGetRules()
         {
+            Assert.Null(ruleService.GetRules().Result);
 
         }
     }
