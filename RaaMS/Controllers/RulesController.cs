@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RaaMS.Interfaces;
 using RaaMS.Models;
 
 namespace RaaMS.Controllers
@@ -12,11 +13,17 @@ namespace RaaMS.Controllers
     [ApiController]
     public class RulesController : ControllerBase
     {
+        IRuleService _ruleService;
+        public RulesController(IRuleService ruleService)
+        {
+            _ruleService = ruleService;
+        }
         // GET: api/Rules
         [HttpGet]
-        public IEnumerable<Rule> Get()
+        public async Task<IEnumerable<Rule>> Get()
         {
-            return new Rule[] { new Rule(), new Rule() };
+            var rules = await _ruleService.GetRules();
+            return rules;
         }
 
         // GET: api/Rules/5

@@ -20,17 +20,7 @@ namespace RaaMS.Services
 
             return dbConnection;
         }
-        public IEnumerable<Models.Rule> GetRules()
-        {
-            string sql = "SELECT TOP 10 * FROM Rules";
-
-            using (var connection = GetConnection())
-            {
-                var rules = connection.Query<Models.Rule>(sql).ToList();                
-            }
-
-            return null;
-        }
+        
 
     }
 }

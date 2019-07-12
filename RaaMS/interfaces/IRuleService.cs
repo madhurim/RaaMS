@@ -9,6 +9,6 @@ namespace RaaMS.Interfaces
     public interface IRuleService
     {
         Rule GetRule(int ruleid);
-        IEnumerable<Rule> GetRules();
+        Task<IEnumerable<Rule>> GetRules();
     }
 }
