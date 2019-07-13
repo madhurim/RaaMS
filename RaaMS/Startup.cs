@@ -30,6 +30,8 @@ namespace RaaMS
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);            
             services.AddTransient<IRuleService, RuleService>();
             services.AddTransient<IDatabaseService, DatabaseService>();
+            services.AddSingleton<IConfiguration>(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,5 +49,6 @@ namespace RaaMS
             app.UseHttpsRedirection();
             app.UseMvc();
         }
+        
     }
 }
