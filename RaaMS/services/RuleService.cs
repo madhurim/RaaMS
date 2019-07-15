@@ -22,7 +22,7 @@ namespace RaaMS.Services
         }
         public async Task<IEnumerable<Models.Rule>> GetRules()
         {
-            string sql = "SELECT TOP 10 * FROM Rules";
+            string sql = "SELECT TOP 10 * FROM [dbo].[Rule]";
             
 
             using (var connection = _databaseService.GetConnection())

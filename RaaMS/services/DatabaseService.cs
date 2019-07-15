@@ -20,12 +20,12 @@ namespace RaaMS.Services
         }
         public IDbConnection GetConnection()
         {
-            var connectionString = _iconfiguration.GetConnectionString("RulesServiceConnection");
+            // var connectionString = _iconfiguration.GetConnectionString("RulesServiceConnection");
+            var connectionString = _iconfiguration.GetSection("ConnectionStrings:RulesServiceConnection").Value; ;
             var dbConnection = new SqlConnection(connectionString);
 
             return dbConnection;
-        }
-        
+        }        
 
     }
 }
