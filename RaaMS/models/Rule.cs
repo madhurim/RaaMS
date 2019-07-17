@@ -15,6 +15,8 @@ namespace RaaMS.Models
         public string RuleStatement { get; set; }
         public string EvaluationStatement { get; set; }
         public Boolean IsActive { get; set; }
+        public string YesOutcome { get; set; }
+        public string NoOutcome { get; set; }
 
     }
 }
