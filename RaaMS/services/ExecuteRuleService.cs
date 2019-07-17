@@ -19,9 +19,11 @@ namespace RaaMS.Services
         }
         public IRuleResult ExecuteRule(Rule theRule,IEnumerable<RuleField> ruleFields)
         {
-            string ruleStatement = theRule.EvaluationStatement;
-            string yesOutcome = theRule.YesOutcome;
-            string noOutcome = theRule.NoOutcome;
+            var ruleStatement = theRule.EvaluationStatement;
+            var yesOutcome = theRule.YesOutcome;
+            var noOutcome = theRule.NoOutcome;
+
+           //Connect to the rule execution function and pass the parameters.
 
             return null;
         }
