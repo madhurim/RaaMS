@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RaaMS.Models;
 
 namespace RaaMS.Interfaces
 {
-    interface IRuleSetService
+    public interface IRuleSetService
     {
+        Task<IEnumerable<Rule>> GetRuleSet(String RuleSetName);
     }
 }

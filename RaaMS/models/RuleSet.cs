@@ -7,6 +7,7 @@ namespace RaaMS.Models
 {
     public class RuleSet
     {
+        public int RuleSetId { get; set; }
         public IDictionary<Rule, int> TheRules { get; set; }
 
     }

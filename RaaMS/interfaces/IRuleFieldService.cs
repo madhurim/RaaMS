@@ -1,12 +1,14 @@
 ﻿using RaaMS.Interfaces;
 using RaaMS.Models;
 using System.Collections.Generic;
+using Dapper;
+using System.Threading.Tasks;
 
 namespace RaaMS.Interfaces
 {
     public interface IRuleFieldService
     {
-        IEnumerable<RuleField> GetRuleFields(int ruleId);
+        Task<IEnumerable<RuleField>> GetRuleFields(int ruleId);
 
     }
 }
