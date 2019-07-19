@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using RaaMS.Interfaces;
 using RaaMS.Models;
 using Dapper;
+using System.Data;
+using Rule = RaaMS.Models.Rule;
 
 namespace RaaMS.Services
 {
@@ -20,13 +22,17 @@ namespace RaaMS.Services
         {
             return null;
         }
-        public async Task<IEnumerable<Models.Rule>> GetRules()
+        public async Task<IEnumerable<Rule>> GetRules()
         {
-            string sql = "SELECT TOP 10 * FROM [dbo].[Rule]";            
-
+        
             using (var connection = _databaseService.GetConnection())
             {
-                var rules = await connection.QueryAsync<Models.Rule>(sql);
+               
+                var rules = await connection.QueryAsync<Rule>(
+                    "usp_getrules", commandType: CommandType.StoredProcedure);
+
+               
+               // var rules = await connection.QueryAsync<Models.Rule>(sql);
 
               /*  var activeRules =
                     from r in rules
